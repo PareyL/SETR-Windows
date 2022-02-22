@@ -1,0 +1,7 @@
+﻿  pch.cpp
+  App.xaml.cpp
+  MainPage.xaml.cpp
+  XamlTypeInfo.Impl.g.cpp
+  XamlTypeInfo.g.cpp
+     Création de la bibliothèque C:\Users\xam74\source\repos\SETR-Windows\x64\Debug\App1\App1.lib et de l'objet C:\Users\xam74\source\repos\SETR-Windows\x64\Debug\App1\App1.exp
+  App1.vcxproj -> C:\Users\xam74\source\repos\SETR-Windows\x64\Debug\App1\App1.exe
