@@ -1,2 +1,0 @@
-﻿  App1.vcxproj -> C:\Users\r_pal\source\repos\SETR-Windows\ARM\Debug\App1\App1.exe
-D:\Visual Studio\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3364,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it.
