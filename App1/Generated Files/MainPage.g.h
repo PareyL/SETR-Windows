@@ -39,6 +39,8 @@ namespace App1
         class MainPage_obj1_Bindings;
     
         private: ::Windows::UI::Xaml::Controls::TextBox^ Affich;
+        private: ::Windows::UI::Xaml::Controls::TextBox^ Lat;
+        private: ::Windows::UI::Xaml::Controls::TextBox^ Long;
     };
 }
 

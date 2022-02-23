@@ -9,9 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="Hey mister police Men" HorizontalAlignment="Center" FontSize="20" Click="Button_Click"/>
-        <TextBox x:Name="Affich" HorizontalAlignment="Center" Margin="0,305,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button Content="Je veux chanter pour ceux" Margin="0,441,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click_1"/>
+        <Button Content="++" FontSize="20" Click="Button_Click" Margin="499,236,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Affich" HorizontalAlignment="Left" Margin="384,236,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="Lat" HorizontalAlignment="Left" Margin="384,319,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.515,1.875"/>
+        <TextBox x:Name="Long" HorizontalAlignment="Left" Margin="499,319,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.338,2.406"/>
+        <Button Content="--" Margin="297,236,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="GPS" Margin="292,319,0,0" VerticalAlignment="Top" Click="GPS_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="384,295,0,0" Text="Lat" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="499,295,0,0" Text="Long" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

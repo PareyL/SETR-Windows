@@ -44,9 +44,26 @@ void ::App1::MainPage::Connect(int __connectionId, ::Platform::Object^ __target)
         break;
     case 4:
         {
-            ::Windows::UI::Xaml::Controls::Button^ element4 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(element4))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App1::MainPage::*)
+            this->Lat = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+        }
+        break;
+    case 5:
+        {
+            this->Long = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+        }
+        break;
+    case 6:
+        {
+            ::Windows::UI::Xaml::Controls::Button^ element6 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(element6))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App1::MainPage::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MainPage::Button_Click_1);
+        }
+        break;
+    case 7:
+        {
+            ::Windows::UI::Xaml::Controls::Button^ element7 = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(element7))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::App1::MainPage::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MainPage::GPS_Click);
         }
         break;
     }

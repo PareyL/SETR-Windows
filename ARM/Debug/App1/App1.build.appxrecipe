@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Machine>MSI</Machine>
-    <WindowsUser>xam74</WindowsUser>
+    <WindowsUser>r_pal</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
@@ -10,240 +10,240 @@
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>e63aaab9-2a21-453b-8834-aa80b0cdcced</PackageIdentityName>
     <PackageIdentityPublisher>CN=r_pal</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\xam74\source\repos\SETR-Windows\App1\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\r_pal\source\repos\SETR-Windows\App1\ARM\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\xam74\source\repos\SETR-Windows\ARM\Debug\App1\AppX</LayoutDir>
+    <LayoutDir>C:\Users\r_pal\source\repos\SETR-Windows\ARM\Debug\App1\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\xam74\source\repos\SETR-Windows\ARM\Debug\App1\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\r_pal\source\repos\SETR-Windows\ARM\Debug\App1\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\ARM\Debug\App1\App1.exe">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\ARM\Debug\App1\App1.exe">
       <PackagePath>App1.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\ARM\Debug\App1\App1.winmd">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\ARM\Debug\App1\App1.winmd">
       <PackagePath>App1.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-125.png">
       <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-150.png">
       <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-125.png">
       <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-150.png">
       <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-125.png">
       <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-150.png">
       <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\ARM\Debug\App1\App.xbf">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\ARM\Debug\App1\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\ARM\Debug\App1\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\ARM\Debug\App1\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\arm\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\xam74\source\repos\SETR-Windows\ARM\Debug\App1\resources.pri">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\ARM\Debug\App1\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

@@ -7,6 +7,7 @@
 #include "MainPage.xaml.h"
 #include <thread>
 #include <shared_mutex>
+#include <GPS.h>
 
 using namespace App1;
 
@@ -25,6 +26,11 @@ using namespace std;
 
 shared_mutex VerInc, VerDec;
 INT Cpt;
+Platform::String^ stringGPS;
+TextBox ^Lat, ^Long;
+Platform::String^ strLat;
+Platform::String^ strLng;
+bool GPSHaveValue, printedGPSValue = false;
 
 static UINT Inc() {
 	Sleep(1);
@@ -49,8 +55,8 @@ static UINT Dec() {
 MainPage::MainPage()
 {
 	InitializeComponent();
+	GPS().setGPS();
 	Cpt = rand();
-
 	DispatcherTimer^ timer = ref new DispatcherTimer; 
 	TimeSpan ts;
 	ts.Duration = 500000;
@@ -64,6 +70,16 @@ MainPage::MainPage()
 	Th_Dec.detach();
 }
 
+void MainPage::AsGPSValue() {
+	GPSHaveValue = true;
+}
+
+Platform::String^ strPos(const wchar_t* str, int start, int end) {
+	Platform::String^ finalStr = "";
+	for (int i = start; i < end; i++)
+		finalStr += str[i].ToString();
+	return finalStr;
+}
 
 void App1::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
@@ -78,4 +94,28 @@ void App1::MainPage::Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml:
 void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)
 {
 	Affich->Text = Cpt.ToString();
+	if (GPSHaveValue && !printedGPSValue) {
+		stringGPS = GPS().getGPS();
+		if (stringGPS->Length() > 0) {
+			const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
+			Platform::String^ strLat = strPos(charStrGPS, 0, 7);
+			Platform::String^ strLng = strPos(charStrGPS, 9, 16);
+			Lat->Text = strLat;
+			Long->Text = strLng;
+			printedGPSValue = true;
+		}
+	}
+}
+
+void App1::MainPage::GPS_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+
+	stringGPS = GPS().getGPS();
+	if (stringGPS->Length() > 0) {
+		const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
+		Platform::String^ strLat = strPos(charStrGPS, 0, 7);
+		Platform::String^ strLng = strPos(charStrGPS, 9, 16);
+		Lat->Text = strLat;
+		Long->Text = strLng;
+	}
 }
