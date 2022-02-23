@@ -32,6 +32,7 @@ Platform::String^ strLat;
 Platform::String^ strLng;
 bool GPSHaveValue, printedGPSValue = false;
 
+// Incrémentation avec Vérou
 static UINT Inc() {
 	Sleep(1);
 	while (true) {
@@ -41,6 +42,7 @@ static UINT Inc() {
 	return 0;
 }
 
+// Décrémentation avec Vérou
 static UINT Dec() {
 	Sleep(1);
 	while (true) {
@@ -55,7 +57,7 @@ static UINT Dec() {
 MainPage::MainPage()
 {
 	InitializeComponent();
-	GPS().setGPS();
+	GPS().setGPS(); // active le GPS
 	Cpt = rand();
 	DispatcherTimer^ timer = ref new DispatcherTimer; 
 	TimeSpan ts;
@@ -70,10 +72,23 @@ MainPage::MainPage()
 	Th_Dec.detach();
 }
 
+// Permet d'activer l'affichage quand on a des valeurs GPS
 void MainPage::AsGPSValue() {
 	GPSHaveValue = true;
 }
 
+// Permet d'afficher les coordonnées
+void PrintGPS() {
+	if (stringGPS->Length() > 0) {
+		const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
+		Platform::String^ strLat = strPos(charStrGPS, 0, 7);
+		Platform::String^ strLng = strPos(charStrGPS, 9, 16);
+		Lat->Text = strLat;
+		Long->Text = strLng;
+	}
+}
+
+// Découpage d'une Plateform::String, permet de récupérer la latitude et longitude
 Platform::String^ strPos(const wchar_t* str, int start, int end) {
 	Platform::String^ finalStr = "";
 	for (int i = start; i < end; i++)
@@ -95,15 +110,8 @@ void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)
 {
 	Affich->Text = Cpt.ToString();
 	if (GPSHaveValue && !printedGPSValue) {
-		stringGPS = GPS().getGPS();
-		if (stringGPS->Length() > 0) {
-			const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
-			Platform::String^ strLat = strPos(charStrGPS, 0, 7);
-			Platform::String^ strLng = strPos(charStrGPS, 9, 16);
-			Lat->Text = strLat;
-			Long->Text = strLng;
-			printedGPSValue = true;
-		}
+		stringGPS = GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
+		PrintGPS();
 	}
 }
 
@@ -111,11 +119,5 @@ void App1::MainPage::GPS_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 {
 
 	stringGPS = GPS().getGPS();
-	if (stringGPS->Length() > 0) {
-		const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
-		Platform::String^ strLat = strPos(charStrGPS, 0, 7);
-		Platform::String^ strLng = strPos(charStrGPS, 9, 16);
-		Lat->Text = strLat;
-		Long->Text = strLng;
-	}
+	PrintGPS();
 }

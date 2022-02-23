@@ -42,33 +42,29 @@ char* test;
 Platform::String^ coordStr = "";
 bool statusOK = false;
 
+// Permet de mettre en place le GPS et derécupérer les droits
 void GPS::setGPS() {
 	Geolocator^ geolocator = ref new Geolocator;
-	create_task(geolocator->RequestAccessAsync()).then([&](task<GeolocationAccessStatus> geo$) -> void {
+	create_task(geolocator->RequestAccessAsync()).then([&](task<GeolocationAccessStatus> geo$) -> void { // Vérifie les droits GPS
 		if (geo$.get() == GeolocationAccessStatus::Allowed) {
 			statusOK = true;
 		}
 		else if (geo$.get() == GeolocationAccessStatus::Denied) {
 			OutputDebugStringA("Denied");
-			//Show some messages to let OP open the location accessing permission
+			// Permet d'ouvrir les droits GPS
 			auto uri = ref new Uri("ms-settings:privacy-location");
-			// Launch the URI
 			auto success = create_task(Windows::System::Launcher::LaunchUriAsync(uri));
 		}
 		});
 }
 
+// Récupère les Coordonnées GPS
 Platform::String^ GPS::getGPS() {
-
 	Geolocator^ geolocator = ref new Geolocator;
-	geolocator->MovementThreshold = 5;
-	geolocator->ReportInterval = 500;
+
 	if(statusOK) {
 		period.Duration = 30 * 10000000;
-		Geolocator^ geolocator = ref new Geolocator;
-
-		bool getPos = false;
-		
+		Geolocator^ geolocator = ref new Geolocator;		
 		auto positionToken = create_task(geolocator->GetGeopositionAsync(period, period))
 			.then([&](task<Geoposition^> position$) -> void {
 			auto position = position$.get();
@@ -78,8 +74,6 @@ Platform::String^ GPS::getGPS() {
 			OutputDebugStringA("  |  ");
 			OutputDebugString(coordinate->Longitude.ToString()->Data());
 			OutputDebugStringA("\n");
-			
-
 			coordStr = coordinate->Latitude.ToString() + " / " + coordinate->Longitude.ToString();
 			if (coordStr->Length() > 0)
 				MainPage::AsGPSValue();
