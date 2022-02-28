@@ -17,7 +17,7 @@ namespace App1
 	{
 	public:
 		MainPage();
-		static void AsGPSValue();
+		static void HasGPSValue();
 
 	private:
 		void Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);

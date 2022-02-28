@@ -76,7 +76,7 @@ Platform::String^ GPS::getGPS() {
 			OutputDebugStringA("\n");
 			coordStr = coordinate->Latitude.ToString() + " / " + coordinate->Longitude.ToString();
 			if (coordStr->Length() > 0)
-				MainPage::AsGPSValue();
+				MainPage::HasGPSValue();
 			});		
 		}	
 	return coordStr;
