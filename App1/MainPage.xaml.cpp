@@ -27,10 +27,9 @@ using namespace std;
 shared_mutex VerInc, VerDec;
 INT Cpt;
 Platform::String^ stringGPS;
-TextBox ^Lat, ^Long;
-Platform::String^ strLat;
-Platform::String^ strLng;
-bool GPSHaveValue, printedGPSValue = false;
+Platform::String^ strLat; Platform::String^ oldStrLat;
+Platform::String^ strLng; Platform::String^ oldStrLng;
+bool GPSHaveValue, firstPrint = false;
 
 // Incrémentation avec Vérou
 static UINT Inc() {
@@ -61,7 +60,8 @@ MainPage::MainPage()
 	Cpt = rand();
 	DispatcherTimer^ timer = ref new DispatcherTimer; 
 	TimeSpan ts;
-	ts.Duration = 500000;
+	ts.Duration = 10000000;
+	timer->Interval = ts;
 	timer->Start();
 	timer->Tick += ref new EventHandler<Object^>(this, &MainPage::OnTick);
 
@@ -72,28 +72,43 @@ MainPage::MainPage()
 	Th_Dec.detach();
 }
 
-// Permet d'activer l'affichage quand on a des valeurs GPS
-void MainPage::AsGPSValue() {
-	GPSHaveValue = true;
-}
-
-// Permet d'afficher les coordonnées
-void PrintGPS() {
-	if (stringGPS->Length() > 0) {
-		const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
-		Platform::String^ strLat = strPos(charStrGPS, 0, 7);
-		Platform::String^ strLng = strPos(charStrGPS, 9, 16);
-		Lat->Text = strLat;
-		Long->Text = strLng;
-	}
-}
-
 // Découpage d'une Plateform::String, permet de récupérer la latitude et longitude
 Platform::String^ strPos(const wchar_t* str, int start, int end) {
 	Platform::String^ finalStr = "";
 	for (int i = start; i < end; i++)
 		finalStr += str[i].ToString();
 	return finalStr;
+}
+
+// Permet d'activer l'affichage quand on a des valeurs GPS
+void MainPage::HasGPSValue() {
+	GPSHaveValue = true;
+}
+
+// Permet d'afficher les coordonnées
+void PrintGPS(TextBox^ textboxA, TextBox^ textboxB) {
+	if (stringGPS->Length() > 0) {
+		if (oldStrLat != "" && oldStrLng != "") {
+			if (strLat != oldStrLat || strLng != oldStrLng) {
+				OutputDebugStringA("Change location\n");
+				const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
+				strLat = strPos(charStrGPS, 0, 7);
+				strLng = strPos(charStrGPS, 10, 17);
+				textboxA->Text = strLat;
+				textboxB->Text = strLng;
+			}
+		}
+		else {
+			OutputDebugStringA("First Print\n");
+			const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
+			strLat = strPos(charStrGPS, 0, 7);
+			strLng = strPos(charStrGPS, 10, 17);
+			textboxA->Text = strLat;
+			textboxB->Text = strLng;
+			}
+		oldStrLat = strLat;
+		oldStrLng = strLng;
+	}
 }
 
 void App1::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -109,9 +124,9 @@ void App1::MainPage::Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml:
 void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)
 {
 	Affich->Text = Cpt.ToString();
-	if (GPSHaveValue && !printedGPSValue) {
+	if (GPSHaveValue) {
 		stringGPS = GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
-		PrintGPS();
+		PrintGPS(Lat, Long);
 	}
 }
 
@@ -119,5 +134,4 @@ void App1::MainPage::GPS_Click(Platform::Object^ sender, Windows::UI::Xaml::Rout
 {
 
 	stringGPS = GPS().getGPS();
-	PrintGPS();
 }

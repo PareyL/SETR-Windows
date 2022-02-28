@@ -35,11 +35,11 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\x64\Debug\App1\App1.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2022-02-23T13:26:57.825</Modified>
+      <Modified>2022-02-28T10:19:54.386</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\x64\Debug\App1\App1.winmd">
       <PackagePath>App1.winmd</PackagePath>
-      <Modified>2022-02-23T13:21:22.324</Modified>
+      <Modified>2022-02-28T09:15:11.892</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -297,11 +297,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\x64\Debug\App1\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-02-23T13:26:57.428</Modified>
+      <Modified>2022-02-28T10:19:54.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\x64\Debug\App1\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-02-23T13:26:57.428</Modified>
+      <Modified>2022-02-28T10:19:54.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\X64\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
