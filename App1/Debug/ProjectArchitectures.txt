@@ -1,1 +1,1 @@
-C:\Users\r_pal\source\repos\App1\App1\App1.vcxproj;x86
+C:\Users\r_pal\source\repos\SETR-Windows\App1\App1.vcxproj;x86

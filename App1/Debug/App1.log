@@ -1,4 +1,2 @@
-﻿  MainPage.xaml.cpp
-     Création de la bibliothèque C:\Users\r_pal\source\repos\App1\Debug\App1\App1.lib et de l'objet C:\Users\r_pal\source\repos\App1\Debug\App1\App1.exp
-  App1.vcxproj -> C:\Users\r_pal\source\repos\App1\Debug\App1\App1.exe
+﻿  App1.vcxproj -> C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\App1.exe
 D:\Visual Studio\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3364,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it.

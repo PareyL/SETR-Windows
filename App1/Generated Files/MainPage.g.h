@@ -12,6 +12,7 @@ namespace Windows {
         namespace Xaml {
             namespace Controls {
                 ref class TextBox;
+                ref class TextBlock;
             }
         }
     }
@@ -39,8 +40,8 @@ namespace App1
         class MainPage_obj1_Bindings;
     
         private: ::Windows::UI::Xaml::Controls::TextBox^ Affich;
-        private: ::Windows::UI::Xaml::Controls::TextBox^ Lat;
-        private: ::Windows::UI::Xaml::Controls::TextBox^ Long;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ Lat;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ Long;
     };
 }
 

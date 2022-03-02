@@ -18,6 +18,7 @@
 #include <array>
 
 
+
 using namespace App1;
 
 using namespace Platform;
@@ -41,6 +42,10 @@ Platform::String^ error = "";
 char* test;
 Platform::String^ coordStr = "";
 bool statusOK = false;
+double earthRadiusKm = 6371.0;
+double M_PI = 2 * acos(0.0);
+//Mote closest;
+int closer;
 
 // Permet de mettre en place le GPS et derécupérer les droits
 void GPS::setGPS() {
@@ -78,6 +83,33 @@ Platform::String^ GPS::getGPS() {
 			if (coordStr->Length() > 0)
 				MainPage::HasGPSValue();
 			});		
-		}	
+		}
 	return coordStr;
 }
+
+double GPS::deg2rad(double deg) {
+	return (deg * M_PI / 180);
+}
+
+/*void GPS::GetCloserMote(double lat, double lng, vector<Mote> motes)
+{
+	double distance = INFINITE;
+	double lat2r = deg2rad(lat);
+	double lon2r = deg2rad(lng);
+
+	for (unsigned i = 0; i < motes.size(); i++)
+	{
+		double lat1r = deg2rad(motes[i].latitude);
+		double lon1r = deg2rad(motes[i].longitude);
+		double u = sin((lat2r - lat1r) / 2);
+		double v = sin((lon2r - lon1r) / 2);
+		motes[i].distance = 2.0 * earthRadiusKm * asin(sqrt(pow(u,2) + cos(lat1r) * cos(lat2r) * pow(v,2)));
+		if (motes[i].distance < distance)
+		{
+			distance = motes[i].distance;
+			closer = i;
+		}
+	}
+	closest = motes[closer];
+}*/
+
