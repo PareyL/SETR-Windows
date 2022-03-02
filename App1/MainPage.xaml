@@ -9,7 +9,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" Text="Turbo Mote Heure" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="28"/>
+        <Image HorizontalAlignment="Center" Height="35" Margin="-150,27,0,0" VerticalAlignment="Top" Width="auto" Source="Assets/Image.png"/>
+        <Image HorizontalAlignment="Center" Height="50" Margin="50,20,0,0" VerticalAlignment="Top" Width="auto" Source="Assets/mote.png"/>
         <ScrollViewer Margin="0, 90, 0, 0">
             <Grid>
                 <Grid Height="120" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10, 0, 10, 0">
@@ -39,7 +40,6 @@
             </Grid>
         </ScrollViewer>
         <Grid/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="128,48,0,0" VerticalAlignment="Top" Width="100" Source="Assets/turbo_white.png"/>
 
     </Grid>
 </Page>

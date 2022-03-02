@@ -28,7 +28,6 @@ C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\MainPage.xbf
 C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\resources.pri
 C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\AppxManifest.xml
 C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\App1.build.appxrecipe
-C:\Users\r_pal\source\repos\SETR-Windows\App1\Debug\App1.vcxproj.AssemblyReference.cache
 C:\Users\r_pal\source\repos\SETR-Windows\App1\Debug\XamlSaveStateFile.xml
 C:\Users\r_pal\source\repos\SETR-Windows\App1\Debug\ResourceHandlingTask.state
 C:\Users\r_pal\source\repos\SETR-Windows\App1\Debug\App1.vcxproj.GenerateResource.Cache

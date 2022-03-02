@@ -193,13 +193,17 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\Downloads\mote_black.png" />
+    <Image Include="..\..\..\..\Downloads\mote_white.png" />
     <Image Include="..\..\..\..\Downloads\turbo_white.png" />
+    <Image Include="Assets\Image.png" />
     <Image Include="Assets\LargeTile.scale-100.png" />
     <Image Include="Assets\LargeTile.scale-125.png" />
     <Image Include="Assets\LargeTile.scale-150.png" />
     <Image Include="Assets\LargeTile.scale-200.png" />
     <Image Include="Assets\LargeTile.scale-400.png" />
     <Image Include="Assets\LockScreenLogo.scale-200.png" />
+    <Image Include="Assets\mote.png" />
     <Image Include="Assets\SmallTile.scale-100.png" />
     <Image Include="Assets\SmallTile.scale-125.png" />
     <Image Include="Assets\SmallTile.scale-150.png" />
