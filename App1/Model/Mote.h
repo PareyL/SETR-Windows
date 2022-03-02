@@ -25,7 +25,6 @@ public :
 
 	void operator=(const Mote& mote);
 
-	//string converteString(Platform::String^ fooRT);
 	static void parseMote(Platform::String^ json, Mote* motes);
 };
 
