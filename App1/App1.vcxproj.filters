@@ -18,10 +18,28 @@
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="GPS.cpp" />
+    <ClCompile Include="Model\ConversionsMaison.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\Mote.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MotesRequest.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="GPS.h" />
+    <ClInclude Include="Model\ConversionsMaison.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Mote.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\MotesRequest.h">
+      <Filter>Model</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">

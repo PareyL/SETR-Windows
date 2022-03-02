@@ -8,7 +8,8 @@
 #include <thread>
 #include <shared_mutex>
 #include <GPS.h>
-#include <Mote.h>
+#include <Model\Mote.h>
+#include "Model/MotesRequest.h"
 
 using namespace App1;
 
@@ -71,6 +72,10 @@ MainPage::MainPage()
 
 	thread Th_Dec(Dec);
 	Th_Dec.detach();
+
+	//Motes Request
+	MotesRequest test;
+	test.getAllMotes();
 }
 
 // Découpage d'une Plateform::String, permet de récupérer la latitude et longitude
@@ -127,14 +132,13 @@ void App1::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::R
 
 void App1::MainPage::Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-    OutputDebugStringA("lest go\n");
+    /*OutputDebugStringA("lest go\n");
 	VerDec.unlock();
     
 	string sstr = "{\"data\":[{\"timestamp\":1645717380000,\"label\":\"light1\",\"value\":305.71,\"mote\":\"9.138\"},{\"timestamp\":1645759199000,\"label\":\"light1\",\"value\":164.29,\"mote\":\"111.130\"},{\"timestamp\":1645816193000,\"label\":\"light1\",\"value\":188.57,\"mote\":\"53.105\"},{\"timestamp\":1645717380000,\"label\":\"temperature\",\"value\":88.36,\"mote\":\"9.138\"},{\"timestamp\":1645759199000,\"label\":\"temperature\",\"value\":-18.85,\"mote\":\"111.130\"},{\"timestamp\":1645816193000,\"label\":\"temperature\",\"value\":-30.94,\"mote\":\"53.105\"},{\"timestamp\":1645717380000,\"label\":\"humidity\",\"value\":1.43,\"mote\":\"9.138\"},{\"timestamp\":1645759199000,\"label\":\"humidity\",\"value\":-4.0,\"mote\":\"111.130\"},{\"timestamp\":1645816193000,\"label\":\"humidity\",\"value\":-4.0,\"mote\":\"53.105\"}]}";
 	Platform::String^ myStr = convertFromString(sstr);
-	Mote* mote = new Mote("test", 0, 0, 0, 0);
-	parseMote(myStr,mote);
-	
+	Mote* mote = vectorM
+	parseMote(myStr,mote);*/
 }
 
 void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)

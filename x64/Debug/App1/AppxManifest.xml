@@ -34,11 +34,11 @@
     <DeviceCapability Name="location" />
   </Capabilities>
   <build:Metadata>
-    <build:Item Name="cl.exe" Version="19.29.30136.0 built by: vcwrkspc" />
+    <build:Item Name="cl.exe" Version="19.29.30140.0 built by: vcwrkspc" />
     <build:Item Name="VisualStudio" Version="16.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2019" />
     <build:Item Name="OperatingSystem" Version="10.0.22000.493 (WinBuild.160101.0800)" />
-    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="16.0.31727.243" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="16.0.31910.33" />
     <build:Item Name="ProjectGUID" Value="{bd84f718-9c69-49be-ad2b-3d0b7eac0bf5}" />
     <build:Item Name="OptimizingToolset" Value="None" />
     <build:Item Name="TargetRuntime" Value="Native" />
