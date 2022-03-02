@@ -10,15 +10,15 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>e63aaab9-2a21-453b-8834-aa80b0cdcced</PackageIdentityName>
     <PackageIdentityPublisher>CN=r_pal</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\r_pal\source\repos\App1\App1\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\r_pal\source\repos\SETR-Windows\App1\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\r_pal\source\repos\App1\Debug\App1\AppX</LayoutDir>
-    <RegisteredManifestChecksum>CD1488DD5D18EDDA400F399A5D1453EB1B94FED05AAEF7EA5EE08A1139154340</RegisteredManifestChecksum>
+    <LayoutDir>C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\AppX</LayoutDir>
+    <RegisteredManifestChecksum>8BBA08932B7771F44A10E699F0B404B699D0ABF8F8F5536852F9678C58EA392F</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>e63aaab9-2a21-453b-8834-aa80b0cdcced_1.0.0.0_x86__8gyqv1v5asb74</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>e63aaab9-2a21-453b-8834-aa80b0cdcced_8gyqv1v5asb74!App</RegisteredUserModeAppID>
     <RegisteredPackageID>e63aaab9-2a21-453b-8834-aa80b0cdcced</RegisteredPackageID>
@@ -26,290 +26,294 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\r_pal\source\repos\App1\Debug\App1\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:57:44.916</Modified>
+      <Modified>2022-03-02T10:31:59.666</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\Debug\App1\App1.exe">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\App1.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2022-01-28T10:54:57.981</Modified>
+      <Modified>2022-03-02T10:16:35.965</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\Debug\App1\App1.winmd">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\App1.winmd">
       <PackagePath>App1.winmd</PackagePath>
-      <Modified>2022-01-28T09:57:41.113</Modified>
+      <Modified>2022-02-28T10:56:48.602</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\Downloads\turbo_white.png">
+      <PackagePath>turbo_white.png</PackagePath>
+      <Modified>2022-03-02T10:29:15.879</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.504</Modified>
+      <Modified>2022-02-22T12:22:12.754</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\LargeTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-125.png">
       <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.533</Modified>
+      <Modified>2022-02-22T12:22:12.755</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\LargeTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-150.png">
       <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.568</Modified>
+      <Modified>2022-02-22T12:22:12.755</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.619</Modified>
+      <Modified>2022-02-22T12:22:12.756</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.775</Modified>
+      <Modified>2022-02-22T12:22:12.758</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2022-01-28T09:34:47.974</Modified>
+      <Modified>2022-02-22T12:22:12.758</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\SmallTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.112</Modified>
+      <Modified>2022-02-22T12:22:12.758</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\SmallTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-125.png">
       <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.128</Modified>
+      <Modified>2022-02-22T12:22:12.759</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\SmallTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-150.png">
       <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.144</Modified>
+      <Modified>2022-02-22T12:22:12.759</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\SmallTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.162</Modified>
+      <Modified>2022-02-22T12:22:12.759</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\SmallTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.188</Modified>
+      <Modified>2022-02-22T12:22:12.760</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.170</Modified>
+      <Modified>2022-02-22T12:22:12.760</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\SplashScreen.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.209</Modified>
+      <Modified>2022-02-22T12:22:12.761</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\SplashScreen.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.263</Modified>
+      <Modified>2022-02-22T12:22:12.761</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.341</Modified>
+      <Modified>2022-02-22T12:22:12.762</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.604</Modified>
+      <Modified>2022-02-22T12:22:12.763</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.208</Modified>
+      <Modified>2022-02-22T12:22:12.764</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square150x150Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.225</Modified>
+      <Modified>2022-02-22T12:22:12.764</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square150x150Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.245</Modified>
+      <Modified>2022-02-22T12:22:12.765</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.267</Modified>
+      <Modified>2022-02-22T12:22:12.765</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.317</Modified>
+      <Modified>2022-02-22T12:22:12.766</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.059</Modified>
+      <Modified>2022-02-22T12:22:12.766</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.073</Modified>
+      <Modified>2022-02-22T12:22:12.767</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.139</Modified>
+      <Modified>2022-02-22T12:22:12.767</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.087</Modified>
+      <Modified>2022-02-22T12:22:12.768</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.101</Modified>
+      <Modified>2022-02-22T12:22:12.768</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.959</Modified>
+      <Modified>2022-02-22T12:22:12.768</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.045</Modified>
+      <Modified>2022-02-22T12:22:12.769</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.991</Modified>
+      <Modified>2022-02-22T12:22:12.769</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.008</Modified>
+      <Modified>2022-02-22T12:22:12.769</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.793</Modified>
+      <Modified>2022-02-22T12:22:12.770</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.807</Modified>
+      <Modified>2022-02-22T12:22:12.770</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.821</Modified>
+      <Modified>2022-02-22T12:22:12.771</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.837</Modified>
+      <Modified>2022-02-22T12:22:12.771</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.858</Modified>
+      <Modified>2022-02-22T12:22:12.772</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.872</Modified>
+      <Modified>2022-02-22T12:22:12.772</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.886</Modified>
+      <Modified>2022-02-22T12:22:12.772</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.973</Modified>
+      <Modified>2022-02-22T12:22:12.772</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.943</Modified>
+      <Modified>2022-02-22T12:22:12.773</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.899</Modified>
+      <Modified>2022-02-22T12:22:12.773</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.913</Modified>
+      <Modified>2022-02-22T12:22:12.774</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.620</Modified>
+      <Modified>2022-02-22T12:22:12.774</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\StoreLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-125.png">
       <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.635</Modified>
+      <Modified>2022-02-22T12:22:12.774</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\StoreLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-150.png">
       <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.651</Modified>
+      <Modified>2022-02-22T12:22:12.775</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\StoreLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.668</Modified>
+      <Modified>2022-02-22T12:22:12.775</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\StoreLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:53.697</Modified>
+      <Modified>2022-02-22T12:22:12.776</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.336</Modified>
+      <Modified>2022-02-22T12:22:12.776</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Wide310x150Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.355</Modified>
+      <Modified>2022-02-22T12:22:12.776</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Wide310x150Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.377</Modified>
+      <Modified>2022-02-22T12:22:12.777</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.405</Modified>
+      <Modified>2022-02-22T12:22:12.777</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\App1\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\App1\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-01-28T09:44:52.481</Modified>
+      <Modified>2022-02-22T12:22:12.778</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\Debug\App1\App.xbf">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-01-28T10:54:57.282</Modified>
+      <Modified>2022-03-02T10:31:59.476</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\Debug\App1\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-01-28T10:54:57.282</Modified>
+      <Modified>2022-03-02T10:31:59.476</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
       <Modified>2020-12-02T02:59:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\App1\Debug\App1\resources.pri">
+    <AppxPackagedFile Include="C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-01-28T09:57:44.744</Modified>
+      <Modified>2022-03-02T10:31:59.599</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

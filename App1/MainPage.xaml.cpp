@@ -30,6 +30,7 @@ Platform::String^ stringGPS;
 Platform::String^ strLat; Platform::String^ oldStrLat;
 Platform::String^ strLng; Platform::String^ oldStrLng;
 bool GPSHaveValue, firstPrint = false;
+float fLat, fLng;
 
 // Incrémentation avec Vérou
 static UINT Inc() {
@@ -86,14 +87,14 @@ void MainPage::HasGPSValue() {
 }
 
 // Permet d'afficher les coordonnées
-void PrintGPS(TextBox^ textboxA, TextBox^ textboxB) {
+void PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
 	if (stringGPS->Length() > 0) {
 		if (oldStrLat != "" && oldStrLng != "") {
 			if (strLat != oldStrLat || strLng != oldStrLng) {
 				OutputDebugStringA("Change location\n");
 				const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
 				strLat = strPos(charStrGPS, 0, 7);
-				strLng = strPos(charStrGPS, 10, 17);
+				strLng = strPos(charStrGPS, 9, 17);
 				textboxA->Text = strLat;
 				textboxB->Text = strLng;
 			}
@@ -102,10 +103,15 @@ void PrintGPS(TextBox^ textboxA, TextBox^ textboxB) {
 			OutputDebugStringA("First Print\n");
 			const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
 			strLat = strPos(charStrGPS, 0, 7);
-			strLng = strPos(charStrGPS, 10, 17);
+			strLng = strPos(charStrGPS, 9, 17);
 			textboxA->Text = strLat;
 			textboxB->Text = strLng;
+			fLat = _wtof(strLat->Data());
+			fLng = _wtof(strLng->Data());
 			}
+		if (fLat > 0 && fLng > 0) {
+			OutputDebugStringA("C'est supérieur !\n");
+		}
 		oldStrLat = strLat;
 		oldStrLng = strLng;
 	}
@@ -124,14 +130,6 @@ void App1::MainPage::Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml:
 void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)
 {
 	Affich->Text = Cpt.ToString();
-	if (GPSHaveValue) {
-		stringGPS = GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
-		PrintGPS(Lat, Long);
-	}
-}
-
-void App1::MainPage::GPS_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-
-	stringGPS = GPS().getGPS();
+	stringGPS = GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
+	PrintGPS(Lat, Long);	
 }

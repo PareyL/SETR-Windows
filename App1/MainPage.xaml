@@ -9,14 +9,37 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="++" FontSize="20" Click="Button_Click" Margin="499,236,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Affich" HorizontalAlignment="Left" Margin="384,236,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="Lat" HorizontalAlignment="Left" Margin="384,319,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.515,1.875"/>
-        <TextBox x:Name="Long" HorizontalAlignment="Left" Margin="499,319,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.338,2.406"/>
-        <Button Content="--" Margin="297,236,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
-        <Button Content="GPS" Margin="292,319,0,0" VerticalAlignment="Top" Click="GPS_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="384,295,0,0" Text="Lat" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="499,295,0,0" Text="Long" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" Text="Turbo Mote Heure" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="28"/>
+        <ScrollViewer Margin="0, 90, 0, 0">
+            <Grid>
+                <Grid Height="120" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10, 0, 10, 0">
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Get your position" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22"/>
+                    <Grid Margin="20, 50, 0, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Latitude" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="Lat" Grid.Column="0" Margin="0,20,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="0.515,1.875"/>
+
+                        <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Longitude" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="Long" Grid.Column="1" Margin="0,20,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="1.338,2.406"/>
+                    </Grid>
+                </Grid>
+                <Grid Height="120" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10, 170, 10, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="++" Grid.Column="2" FontSize="20" Click="Button_Click" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBox x:Name="Affich" Grid.Column="1" Margin="0,0,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button Content="--"  Grid.Column="0" Margin="0,0,0,0" Click="Button_Click_1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+        <Grid/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="128,48,0,0" VerticalAlignment="Top" Width="100" Source="Assets/turbo_white.png"/>
 
     </Grid>
 </Page>

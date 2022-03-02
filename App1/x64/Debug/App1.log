@@ -1,4 +1,6 @@
-﻿  MainPage.xaml.cpp
+﻿  GPS.cpp
+C:\Users\r_pal\source\repos\SETR-Windows\App1\GPS.cpp(73,1): warning C4973: 'Windows::Devices::Geolocation::IGeocoordinate::Latitude::get' : marqué comme déconseillé
+C:\Users\r_pal\source\repos\SETR-Windows\App1\GPS.cpp(73,1): message : Message : 'Latitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Latitude'
      Création de la bibliothèque C:\Users\r_pal\source\repos\SETR-Windows\x64\Debug\App1\App1.lib et de l'objet C:\Users\r_pal\source\repos\SETR-Windows\x64\Debug\App1\App1.exp
   App1.vcxproj -> C:\Users\r_pal\source\repos\SETR-Windows\x64\Debug\App1\App1.exe
 D:\Visual Studio\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3364,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it.
