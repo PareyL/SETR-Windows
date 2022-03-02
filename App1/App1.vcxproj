@@ -193,9 +193,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\mote_black.png" />
-    <Image Include="..\..\..\..\Downloads\mote_white.png" />
-    <Image Include="..\..\..\..\Downloads\turbo_white.png" />
     <Image Include="Assets\Image.png" />
     <Image Include="Assets\LargeTile.scale-100.png" />
     <Image Include="Assets\LargeTile.scale-125.png" />
