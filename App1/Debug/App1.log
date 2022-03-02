@@ -1,18 +1,53 @@
-﻿  pch.cpp
-  App.xaml.cpp
-  GPS.cpp
-  MainPage.xaml.cpp
-  XamlTypeInfo.Impl.g.cpp
-C:\Users\r_pal\source\repos\SETR-Windows\App1\MainPage.xaml.cpp(110,16): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-C:\Users\r_pal\source\repos\SETR-Windows\App1\MainPage.xaml.cpp(111,16): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-C:\Users\r_pal\source\repos\SETR-Windows\App1\GPS.cpp(78,1): warning C4973: 'Windows::Devices::Geolocation::IGeocoordinate::Latitude::get' : marqué comme déconseillé
-C:\Users\r_pal\source\repos\SETR-Windows\App1\GPS.cpp(78,1): message : Message : 'Latitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Latitude'
-C:\Users\r_pal\source\repos\SETR-Windows\App1\GPS.cpp(80,1): warning C4973: 'Windows::Devices::Geolocation::IGeocoordinate::Longitude::get' : marqué comme déconseillé
-C:\Users\r_pal\source\repos\SETR-Windows\App1\GPS.cpp(80,1): message : Message : 'Longitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Longitude'
-C:\Users\r_pal\source\repos\SETR-Windows\App1\GPS.cpp(82,1): warning C4973: 'Windows::Devices::Geolocation::IGeocoordinate::Latitude::get' : marqué comme déconseillé
-C:\Users\r_pal\source\repos\SETR-Windows\App1\GPS.cpp(82,1): message : Message : 'Latitude may be altered or unavailable after Windows 8.1. Instead, use Point.Position.Latitude'
-  XamlTypeInfo.g.cpp
+﻿  MainPage.xaml.cpp
+  ConversionsMaison.cpp
+  Mote.cpp
+  MotesRequest.cpp
+C:\Users\r_pal\source\repos\SETR-Windows\App1\Model\Mote.cpp(59,39): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\r_pal\source\repos\SETR-Windows\App1\Model\Mote.cpp(62,35): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\r_pal\source\repos\SETR-Windows\App1\Model\Mote.cpp(65,33): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\r_pal\source\repos\SETR-Windows\App1\Model\Mote.cpp(68,36): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(2575,23): warning C4244: 'argument' : conversion de 'wchar_t' en 'const _Elem', perte possible de données
+          with
+          [
+              _Elem=char
+          ] (compilation du fichier source Model\ConversionsMaison.cpp)
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(2586): message : voir la référence à l'instanciation de la fonction modèle 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(_Iter,const _Iter,std::input_iterator_tag)' en cours de compilation
+          with
+          [
+              _Iter=wchar_t *
+          ] (compilation du fichier source Model\ConversionsMaison.cpp)
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(2586): message : voir la référence à l'instanciation de la fonction modèle 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(_Iter,const _Iter,std::input_iterator_tag)' en cours de compilation
+          with
+          [
+              _Iter=wchar_t *
+          ] (compilation du fichier source Model\ConversionsMaison.cpp)
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(2566): message : voir la référence à l'instanciation de la fonction modèle 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(const _Iter,const _Iter,std::forward_iterator_tag)' en cours de compilation
+          with
+          [
+              _Iter=wchar_t *
+          ] (compilation du fichier source Model\ConversionsMaison.cpp)
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(2566): message : voir la référence à l'instanciation de la fonction modèle 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<wchar_t*>(const _Iter,const _Iter,std::forward_iterator_tag)' en cours de compilation
+          with
+          [
+              _Iter=wchar_t *
+          ] (compilation du fichier source Model\ConversionsMaison.cpp)
+C:\Users\r_pal\source\repos\SETR-Windows\App1\Model\ConversionsMaison.cpp(10): message : voir la référence à l'instanciation de la fonction modèle 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' en cours de compilation
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Alloc=std::allocator<char>
+          ]
+C:\Users\r_pal\source\repos\SETR-Windows\App1\Model\ConversionsMaison.cpp(10): message : voir la référence à l'instanciation de la fonction modèle 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' en cours de compilation
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Alloc=std::allocator<char>
+          ]
+C:\Users\r_pal\source\repos\SETR-Windows\App1\Model\MotesRequest.cpp(49,36): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Users\r_pal\source\repos\SETR-Windows\App1\Model\MotesRequest.cpp(49,26): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Users\r_pal\source\repos\SETR-Windows\App1\MainPage.xaml.cpp(115,16): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\r_pal\source\repos\SETR-Windows\App1\MainPage.xaml.cpp(116,16): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
      Création de la bibliothèque C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\App1.lib et de l'objet C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\App1.exp
-MainPage.xaml.obj : error LNK2019: symbole externe non résolu "public: __thiscall Mote::Mote(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,float,float,float,float)" (??0Mote@@QAE@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMM@Z) référencé dans la fonction "private: void __cdecl App1::MainPage::Button_Click_1(class Platform::Object ^,class Windows::UI::Xaml::RoutedEventArgs ^)" (?Button_Click_1@MainPage@App1@@A$AAAXP$AAVObject@Platform@@P$AAVRoutedEventArgs@Xaml@UI@Windows@@@Z)
-MainPage.xaml.obj : error LNK2019: symbole externe non résolu "void __cdecl parseMote(class Platform::String ^,class Mote *)" (?parseMote@@YAXP$AAVString@Platform@@PAVMote@@@Z) référencé dans la fonction "private: void __cdecl App1::MainPage::Button_Click_1(class Platform::Object ^,class Windows::UI::Xaml::RoutedEventArgs ^)" (?Button_Click_1@MainPage@App1@@A$AAAXP$AAVObject@Platform@@P$AAVRoutedEventArgs@Xaml@UI@Windows@@@Z)
-C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\App1.exe : fatal error LNK1120: 2 externes non résolus
+  App1.vcxproj -> C:\Users\r_pal\source\repos\SETR-Windows\Debug\App1\App1.exe
