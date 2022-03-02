@@ -195,19 +195,10 @@
     <Image Include="Assets\StoreLogo.scale-400.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="..\..\..\..\Downloads\turbo_white.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\Image.png">
       <Filter>Assets</Filter>
     </Image>
-    <Image Include="..\..\..\..\Downloads\mote_white.png">
-      <Filter>Assets</Filter>
-    </Image>
     <Image Include="Assets\mote.png">
-      <Filter>Assets</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Downloads\mote_black.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>
