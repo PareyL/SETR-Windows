@@ -47,3 +47,4 @@ C:\Users\r_pal\source\repos\SETR-Windows\App1\Debug\qualifiers.txt
 C:\Users\r_pal\source\repos\SETR-Windows\App1\Debug\qualifiers.txt.intermediate
 C:\Users\r_pal\source\repos\SETR-Windows\App1\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\r_pal\source\repos\SETR-Windows\App1\Debug\ProjectArchitectures.txt
+C:\Users\r_pal\source\repos\SETR-Windows\App1\Debug\App1.vcxproj.AssemblyReference.cache

@@ -201,6 +201,12 @@
     <Image Include="Assets\mote.png">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="Assets\mote.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\mote.scale-400.png">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
