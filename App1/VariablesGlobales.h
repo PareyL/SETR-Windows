@@ -17,5 +17,7 @@ public :
 	static shared_mutex VerrouMotes; 
 	static shared_mutex VerrouCoordonnees;
 
+	VariablesGlobales();
+
 };
 
