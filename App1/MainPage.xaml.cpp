@@ -33,6 +33,7 @@ Platform::String^ strLat; Platform::String^ oldStrLat;
 Platform::String^ strLng; Platform::String^ oldStrLng;
 bool GPSHaveValue, firstPrint = false;
 float fLat, fLng;
+MotesRequest motesRequest;
 
 // Incrémentation avec Vérou
 static UINT Inc() {
@@ -75,8 +76,7 @@ MainPage::MainPage()
 	Th_Dec.detach();
 
 	//Motes Request
-	MotesRequest test;
-	test.getAllMotes();
+	motesRequest.getAllMotes();
 }
 
 // Découpage d'une Plateform::String, permet de récupérer la latitude et longitude
@@ -123,14 +123,6 @@ void PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
 	}
 }
 
-Platform::String^ convertFromString(const std::string& input)
-{
-	std::wstring w_str = std::wstring(input.begin(), input.end());
-	const wchar_t* w_chars = w_str.c_str();
-
-	return (ref new Platform::String(w_chars));
-}
-
 void App1::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	VerInc.unlock();
@@ -138,6 +130,8 @@ void App1::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::R
 
 void App1::MainPage::Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
+	motesRequest.updateMote(43);
+
     /*OutputDebugStringA("lest go\n");
 	VerDec.unlock();
     

@@ -12,6 +12,7 @@ using namespace Windows::Data::Json;
 using namespace std;
 
 std::vector<Mote> vectorMotes = std::vector<Mote>();
+int indiceMote = 0;
 
 MotesRequest::MotesRequest()
 {
@@ -55,13 +56,35 @@ void MotesRequest::getAllMotes()
 		catch (Platform::COMException^ e) {
 			OutputDebugString(e->Message->Data());
 		}
-
-		//OutputDebugString(tabMotes[0].getId().ToString()->Data());
-		
 	});
+}
 
+void MotesRequest::updateMote(int idMote)
+{
+	indiceMote = 0;
+	for (indiceMote; indiceMote < vectorMotes.size(); indiceMote++)
+	{
+		if (vectorMotes[indiceMote].getId() == idMote)
+			break;
+	}
 
+	Platform::String^ moteId = ConversionsMaison::conversionStringToPlatformString(vectorMotes[indiceMote].getIpv6());
 
+	//Construction de l'URL
+	Platform::String^ requestUrl = urlIOTLab + "rest/data/1/temperature-light2-light1-battery_indicator-humidity/1/" + moteId;
 
+	HttpClient^ httpClient = ref new HttpClient();
+	Uri^ uri = ref new Uri(requestUrl);
 
+	auto test = create_task(httpClient->GetStringAsync(uri))
+		.then([&](task<Platform::String^> httpContent$) -> void {
+			try {
+				Platform::String^ httpContent = httpContent$.get();
+				Mote::parseMote(httpContent, &(vectorMotes[indiceMote]));
+
+			}
+			catch (Platform::COMException^ e) {
+				OutputDebugString(e->Message->Data());
+			}
+		});
 }

@@ -1,8 +1,9 @@
-﻿  Mote.cpp
-C:\Users\nicol\Git\SETR-Windows\App1\Model\Mote.cpp(59,39): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-C:\Users\nicol\Git\SETR-Windows\App1\Model\Mote.cpp(62,35): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-C:\Users\nicol\Git\SETR-Windows\App1\Model\Mote.cpp(65,33): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-C:\Users\nicol\Git\SETR-Windows\App1\Model\Mote.cpp(68,36): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+﻿  MainPage.xaml.cpp
+  MotesRequest.cpp
+C:\Users\nicol\Git\SETR-Windows\App1\Model\MotesRequest.cpp(50,36): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Users\nicol\Git\SETR-Windows\App1\Model\MotesRequest.cpp(50,26): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+C:\Users\nicol\Git\SETR-Windows\App1\MainPage.xaml.cpp(115,16): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\nicol\Git\SETR-Windows\App1\MainPage.xaml.cpp(116,16): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
      Création de la bibliothèque C:\Users\nicol\Git\SETR-Windows\x64\Debug\App1\App1.lib et de l'objet C:\Users\nicol\Git\SETR-Windows\x64\Debug\App1\App1.exp
   App1.vcxproj -> C:\Users\nicol\Git\SETR-Windows\x64\Debug\App1\App1.exe
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VisualStudio\v16.0\AppxPackage\Microsoft.AppXPackage.Targets(3367,5): warning : APPX4001: Build property AppxBundlePlatforms is not explicitly set and is calculated based on currently building architecture. Use 'Create App Package' wizard or edit project file to set it.

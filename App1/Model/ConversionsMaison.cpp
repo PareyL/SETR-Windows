@@ -17,3 +17,11 @@ int ConversionsMaison::conversionPlatformStringToInt(Platform::String^ chaine)
     int res = stoi(string);
     return res;
 }
+
+Platform::String^ ConversionsMaison::conversionStringToPlatformString(const std::string& input)
+{
+    std::wstring w_str = std::wstring(input.begin(), input.end());
+    const wchar_t* w_chars = w_str.c_str();
+
+    return (ref new Platform::String(w_chars));
+}

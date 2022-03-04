@@ -11,8 +11,9 @@ public :
 
 	MotesRequest();
 
-	void getAllMotes();
 
+	void getAllMotes();
+	void updateMote(int idMote);
 
 };
 
