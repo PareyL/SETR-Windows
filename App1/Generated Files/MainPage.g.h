@@ -40,6 +40,10 @@ namespace App1
         class MainPage_obj1_Bindings;
     
         private: ::Windows::UI::Xaml::Controls::TextBox^ Affich;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ Hum;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ Light;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ Mote;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ Temp;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ Lat;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ Long;
     };
