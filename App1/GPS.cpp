@@ -94,8 +94,8 @@ int GPS::GetCloserMote(float lat, float lng)
 	VariablesGlobales::VerrouMotes.lock();
 
 	double distance = INFINITE;
-	double lat2r = deg2rad(lat);
-	double lon2r = deg2rad(lng);
+	double lat2r = GPS::deg2rad(lat);
+	double lon2r = GPS::deg2rad(lng);
 
 	for (unsigned i = 0; i < VariablesGlobales::vectorMotes.size(); i++)
 	{

@@ -14,16 +14,6 @@
 
 using namespace App1;
 
-using namespace Platform;
-using namespace Windows::Foundation;
-using namespace Windows::Foundation::Collections;
-using namespace Windows::UI::Xaml;
-using namespace Windows::UI::Xaml::Controls;
-using namespace Windows::UI::Xaml::Controls::Primitives;
-using namespace Windows::UI::Xaml::Data;
-using namespace Windows::UI::Xaml::Input;
-using namespace Windows::UI::Xaml::Media;
-using namespace Windows::UI::Xaml::Navigation;
 
 using namespace std;
 
@@ -32,8 +22,8 @@ Platform::String^ stringGPS;
 Platform::String^ strLat; Platform::String^ oldStrLat;
 Platform::String^ strLng; Platform::String^ oldStrLng;
 bool GPSHaveValue, firstPrint = false;
-float fLat, fLng;
-TextBlock^ Lat, ^ Long;
+float fLat = 0, fLng = 0;
+TextBlock^ textLat, ^ textLong;
 MotesRequest motesRequest;
 
 
@@ -47,7 +37,7 @@ Platform::String^ strPos(const wchar_t* str, int start, int end) {
 }
 
 // Permet d'afficher les coordonnées
-void PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
+void MainPage::PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
 	if (stringGPS->Length() > 0) {
 		if (oldStrLat != "" && oldStrLng != "") {
 			if (strLat != oldStrLat || strLng != oldStrLng) {
@@ -82,10 +72,10 @@ void PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
 		oldStrLng = strLng;
 
 		VariablesGlobales::VerrouCoordonnees.lock();
-		if (fLat != NULL && fLng != NULL)
+		if (fLat != 0 && fLng != 0)
 		{
-			GPS gps;
-			gps.GetCloserMote(fLat, fLng);
+			OutputDebugStringA("geoloc not null\n");
+			GPS::GetCloserMote(fLat, fLng);
 		}
 		VariablesGlobales::VerrouCoordonnees.unlock();
 	}
@@ -97,8 +87,6 @@ static UINT ThreadGPS() {
 	Sleep(1);
 	while (true) {
 		VariablesGlobales::VerrouGPS.lock();
-		stringGPS = GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
-		PrintGPS(Lat, Long);
 	}
 	return 0;
 }
@@ -140,7 +128,8 @@ MainPage::MainPage()
 	timer->Interval = ts;
 	timer->Start();
 	timer->Tick += ref new EventHandler<Object^>(this, &MainPage::OnTick);
-
+	textLat = ref new TextBlock();
+	textLong = ref new TextBlock();
 
 	thread Th_GPS(ThreadGPS);
 	Th_GPS.detach();
@@ -180,6 +169,10 @@ void App1::MainPage::Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml:
 
 void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)
 {
+	textLat = this->Lat;
+	textLong = this->Long;
+	stringGPS = GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
+	MainPage::PrintGPS(Lat, Long);
 	Affich->Text = Cpt.ToString();
 	VariablesGlobales::VerrouGPS.unlock();
 }
