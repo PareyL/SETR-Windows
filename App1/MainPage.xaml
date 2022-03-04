@@ -14,32 +14,32 @@
         <ScrollViewer Margin="0, 90, 0, 0">
             <Grid>
                 <Grid Height="110" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10, 0, 10, 0">
-                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Get your position" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Get your position" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
                     <Grid Margin="20, 50, 0, 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Latitude" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
-                        <TextBlock x:Name="Lat" Grid.Column="0" Margin="0,20,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="0.515,1.875"/>
+                        <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Latitude" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+                        <TextBlock x:Name="Lat" Grid.Column="0" Margin="0,20,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="0.515,1.875" FontSize="18"/>
 
-                        <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Longitude" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
-                        <TextBlock x:Name="Long" Grid.Column="1" Margin="0,20,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="1.338,2.406"/>
+                        <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Longitude" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+                        <TextBlock x:Name="Long" Grid.Column="1" Margin="0,20,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="1.338,2.406" FontSize="18"/>
                     </Grid>
                 </Grid>
 
                 <Grid Height="190" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10, 120, 10, 0">
-                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Informations" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Informations" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24"/>
                     <Grid Margin="20, 50, 0, 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Mote" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
-                        <TextBlock x:Name="Mote" Grid.Column="0" Margin="0,30,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.515,1.875"/>
+                        <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Mote" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+                        <TextBlock x:Name="Mote" Grid.Column="0" Margin="0,30,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.515,1.875" FontSize="18"/>
 
-                        <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Temperature" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
-                        <TextBlock x:Name="Temp" Grid.Column="1" Margin="0,30,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.338,2.406"/>
+                        <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Temperature" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+                        <TextBlock x:Name="Temp" Grid.Column="1" Margin="0,30,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.338,2.406" FontSize="18"/>
                         </Grid>
 
                     <Grid Margin="20, 120, 0, 0">
@@ -47,11 +47,11 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Humidity" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
-                        <TextBlock x:Name="Hum" Grid.Column="0" Margin="0,30,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.338,2.406"/>
+                        <TextBlock HorizontalAlignment="Center" Grid.Column="0" Text="Humidity" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+                        <TextBlock x:Name="Hum" Grid.Column="0" Margin="0,30,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.338,2.406" FontSize="18"/>
 
-                        <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Luminosity" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold"/>
-                        <TextBlock x:Name="Light" Grid.Column="1" Margin="0,20,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="1.338,2.406"/>
+                        <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="Luminosity" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+                        <TextBlock x:Name="Light" Grid.Column="1" Margin="0,20,0,0" HorizontalAlignment="Center" Text="0.000" TextWrapping="Wrap" VerticalAlignment="Center" RenderTransformOrigin="1.338,2.406" FontSize="18"/>
                     </Grid>
                 </Grid>
 

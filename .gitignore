@@ -23,6 +23,19 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+# Build results
+App1/[Dd]ebug/
+App1/[Dd]ebugPublic/
+App1/[Rr]elease/
+App1/[Rr]eleases/
+App1/[Gg]enerated Files/
+App1/x64/
+App1/x86/
+App1/build/
+App1/bld/
+App1/[Bb]in/
+App1/[Oo]bj/
+
 # Visual Studo 2015 cache/options directory
 .vs/
 
