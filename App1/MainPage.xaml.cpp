@@ -7,9 +7,10 @@
 #include "MainPage.xaml.h"
 #include <thread>
 #include <shared_mutex>
-#include <GPS.h>
-#include <Model\Mote.h>
+#include "GPS.h"
+#include "Model/Mote.h"
 #include "Model/MotesRequest.h"
+#include "VariablesGlobales.h"
 
 using namespace App1;
 
@@ -26,31 +27,102 @@ using namespace Windows::UI::Xaml::Navigation;
 
 using namespace std;
 
-shared_mutex VerInc, VerDec;
 INT Cpt;
 Platform::String^ stringGPS;
 Platform::String^ strLat; Platform::String^ oldStrLat;
 Platform::String^ strLng; Platform::String^ oldStrLng;
 bool GPSHaveValue, firstPrint = false;
 float fLat, fLng;
+TextBlock^ Lat, ^ Long;
 MotesRequest motesRequest;
 
-// Incrémentation avec Vérou
-static UINT Inc() {
+
+
+// Découpage d'une Plateform::String, permet de récupérer la latitude et longitude
+Platform::String^ strPos(const wchar_t* str, int start, int end) {
+	Platform::String^ finalStr = "";
+	for (int i = start; i < end; i++)
+		finalStr += str[i].ToString();
+	return finalStr;
+}
+
+// Permet d'afficher les coordonnées
+void PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
+	if (stringGPS->Length() > 0) {
+		if (oldStrLat != "" && oldStrLng != "") {
+			if (strLat != oldStrLat || strLng != oldStrLng) {
+				OutputDebugStringA("Change location\n");
+				const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
+				strLat = strPos(charStrGPS, 0, 7);
+				strLng = strPos(charStrGPS, 9, 17);
+				textboxA->Text = strLat;
+				textboxB->Text = strLng;
+
+				VariablesGlobales::VerrouCoordonnees.lock();
+				fLat = _wtof(strLat->Data());
+				fLng = _wtof(strLng->Data());
+				VariablesGlobales::VerrouCoordonnees.unlock();
+			}
+		}
+		else {
+			OutputDebugStringA("First Print\n");
+			const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
+			strLat = strPos(charStrGPS, 0, 7);
+			strLng = strPos(charStrGPS, 9, 17);
+			textboxA->Text = strLat;
+			textboxB->Text = strLng;
+
+			VariablesGlobales::VerrouCoordonnees.lock();
+			fLat = _wtof(strLat->Data());
+			fLng = _wtof(strLng->Data());
+			VariablesGlobales::VerrouCoordonnees.unlock();
+		}
+
+		oldStrLat = strLat;
+		oldStrLng = strLng;
+
+		VariablesGlobales::VerrouCoordonnees.lock();
+		if (fLat != NULL && fLng != NULL)
+		{
+			GPS gps;
+			gps.GetCloserMote(fLat, fLng);
+		}
+		VariablesGlobales::VerrouCoordonnees.unlock();
+	}
+}
+
+
+// Thread de récupération des données GPS
+static UINT ThreadGPS() {
 	Sleep(1);
 	while (true) {
-		VerInc.lock();
-		Cpt++;
+		VariablesGlobales::VerrouGPS.lock();
+		stringGPS = GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
+		PrintGPS(Lat, Long);
 	}
 	return 0;
 }
 
 // Décrémentation avec Vérou
-static UINT Dec() {
+static UINT ThreadAffichage() {
 	Sleep(1);
 	while (true) {
-		VerDec.lock();
+		VariablesGlobales::VerrouAffichage.lock();
 		Cpt--;
+	}
+	return 0;
+}
+
+// Décrémentation avec Vérou
+static UINT ThreadMotes() {
+	Sleep(1);
+	motesRequest.getAllMotes();
+
+	while (true) {
+		VariablesGlobales::VerrouMotes.lock();
+		Cpt--;
+
+		
 	}
 	return 0;
 }
@@ -69,63 +141,28 @@ MainPage::MainPage()
 	timer->Start();
 	timer->Tick += ref new EventHandler<Object^>(this, &MainPage::OnTick);
 
-	thread Th_Inc(Inc);
-	Th_Inc.detach();
 
-	thread Th_Dec(Dec);
-	Th_Dec.detach();
+	thread Th_GPS(ThreadGPS);
+	Th_GPS.detach();
 
-	//Motes Request
-	motesRequest.getAllMotes();
+	thread Th_Aff(ThreadAffichage);
+	Th_Aff.detach();
+
+	thread Th_Mot(ThreadMotes);
+	Th_Mot.detach();
+
 }
 
-// Découpage d'une Plateform::String, permet de récupérer la latitude et longitude
-Platform::String^ strPos(const wchar_t* str, int start, int end) {
-	Platform::String^ finalStr = "";
-	for (int i = start; i < end; i++)
-		finalStr += str[i].ToString();
-	return finalStr;
-}
 
 // Permet d'activer l'affichage quand on a des valeurs GPS
 void MainPage::HasGPSValue() {
 	GPSHaveValue = true;
 }
 
-// Permet d'afficher les coordonnées
-void PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
-	if (stringGPS->Length() > 0) {
-		if (oldStrLat != "" && oldStrLng != "") {
-			if (strLat != oldStrLat || strLng != oldStrLng) {
-				OutputDebugStringA("Change location\n");
-				const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
-				strLat = strPos(charStrGPS, 0, 7);
-				strLng = strPos(charStrGPS, 9, 17);
-				textboxA->Text = strLat;
-				textboxB->Text = strLng;
-			}
-		}
-		else {
-			OutputDebugStringA("First Print\n");
-			const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
-			strLat = strPos(charStrGPS, 0, 7);
-			strLng = strPos(charStrGPS, 9, 17);
-			textboxA->Text = strLat;
-			textboxB->Text = strLng;
-			fLat = _wtof(strLat->Data());
-			fLng = _wtof(strLng->Data());
-			}
-		if (fLat > 0 && fLng > 0) {
-			OutputDebugStringA("C'est supérieur !\n");
-		}
-		oldStrLat = strLat;
-		oldStrLng = strLng;
-	}
-}
 
 void App1::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	VerInc.unlock();
+	VariablesGlobales::VerrouGPS.unlock();
 }
 
 void App1::MainPage::Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -144,6 +181,5 @@ void App1::MainPage::Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml:
 void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)
 {
 	Affich->Text = Cpt.ToString();
-	stringGPS = GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
-	PrintGPS(Lat, Long);	
+	VariablesGlobales::VerrouGPS.unlock();
 }

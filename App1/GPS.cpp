@@ -1,9 +1,9 @@
 #include "pch.h"
 #include "GPS.h"
 #include "MainPage.xaml.h"
+#include "VariablesGlobales.h"
 #include <string>
 #include <thread>
-#include <shared_mutex>
 #include <fstream>
 #include <vector>
 #include <iostream>
@@ -16,7 +16,6 @@
 #include <codecvt>
 #include <stdio.h>
 #include <array>
-
 
 
 using namespace App1;
@@ -44,7 +43,6 @@ Platform::String^ coordStr = "";
 bool statusOK = false;
 double earthRadiusKm = 6371.0;
 double M_PI = 2 * acos(0.0);
-//Mote closest;
 int closer;
 
 // Permet de mettre en place le GPS et derécupérer les droits
@@ -91,25 +89,31 @@ double GPS::deg2rad(double deg) {
 	return (deg * M_PI / 180);
 }
 
-/*void GPS::GetCloserMote(double lat, double lng, vector<Mote> motes)
+int GPS::GetCloserMote(float lat, float lng)
 {
+	VariablesGlobales::VerrouMotes.lock();
+
 	double distance = INFINITE;
 	double lat2r = deg2rad(lat);
 	double lon2r = deg2rad(lng);
 
-	for (unsigned i = 0; i < motes.size(); i++)
+	for (unsigned i = 0; i < VariablesGlobales::vectorMotes.size(); i++)
 	{
-		double lat1r = deg2rad(motes[i].latitude);
-		double lon1r = deg2rad(motes[i].longitude);
+		double lat1r = VariablesGlobales::vectorMotes[i].getLatitude();
+		double lon1r = VariablesGlobales::vectorMotes[i].getLongitude();
 		double u = sin((lat2r - lat1r) / 2);
 		double v = sin((lon2r - lon1r) / 2);
-		motes[i].distance = 2.0 * earthRadiusKm * asin(sqrt(pow(u,2) + cos(lat1r) * cos(lat2r) * pow(v,2)));
-		if (motes[i].distance < distance)
+		VariablesGlobales::vectorMotes[i].distance = 2.0 * earthRadiusKm * asin(sqrt(pow(u,2) + cos(lat1r) * cos(lat2r) * pow(v,2)));
+		if (VariablesGlobales::vectorMotes[i].distance < distance)
 		{
-			distance = motes[i].distance;
+			distance = VariablesGlobales::vectorMotes[i].distance;
 			closer = i;
 		}
 	}
-	closest = motes[closer];
-}*/
+	int id = VariablesGlobales::vectorMotes[closer].getId();
+
+	VariablesGlobales::VerrouMotes.unlock();
+
+	return id;
+}
 

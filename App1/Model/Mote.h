@@ -16,6 +16,7 @@ public :
 	float ligth;
 	float humidity;
 	float battery;
+	double distance;
 
 	int getId();
 	std::string getIpv6();

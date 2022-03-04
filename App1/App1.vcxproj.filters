@@ -27,6 +27,7 @@
     <ClCompile Include="Model\MotesRequest.cpp">
       <Filter>Model</Filter>
     </ClCompile>
+    <ClCompile Include="VariablesGlobales.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -41,6 +42,7 @@
       <Filter>Model</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="VariablesGlobales.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">

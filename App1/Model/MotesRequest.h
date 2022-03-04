@@ -1,6 +1,5 @@
 #pragma once
-#include <list>
-#include <vector>
+
 
 class MotesRequest
 {
@@ -16,4 +15,3 @@ public :
 	void updateMote(int idMote);
 
 };
-

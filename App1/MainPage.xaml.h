@@ -5,6 +5,7 @@
 
 #pragma once
 
+
 #include "MainPage.g.h"
 
 namespace App1

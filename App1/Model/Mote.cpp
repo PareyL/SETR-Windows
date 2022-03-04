@@ -12,7 +12,8 @@ Mote::Mote(int id, float latitude, float longitude, std::string i1, std::string 
     temperature(0.0),
     ligth(0.0),
     humidity(0.0),
-    battery(0.0)
+    battery(0.0),
+    distance(INFINITE)
 {}
 
 int Mote::getId()

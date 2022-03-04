@@ -4,15 +4,13 @@
 #include "conversionsMaison.h"
 #include <iostream>
 #include <string>
+#include "VariablesGlobales.h"
 
 using namespace Windows::Foundation;
 using namespace Windows::Web::Http;
 using namespace Concurrency;
 using namespace Windows::Data::Json;
 using namespace std;
-
-std::vector<Mote> vectorMotes = std::vector<Mote>();
-int indiceMote = 0;
 
 MotesRequest::MotesRequest()
 {
@@ -21,8 +19,6 @@ MotesRequest::MotesRequest()
 
 void MotesRequest::getAllMotes()
 {
-	vectorMotes.clear();
-
 	//Construction de l'URL
 	Platform::String^ requestUrl = urlIOTLab + "rest/info/motes";
 
@@ -37,6 +33,10 @@ void MotesRequest::getAllMotes()
 			JsonArray^ data = objJson->GetObject()->GetNamedArray("sender")->GetArray();
 			int jsonArraySize = data->Size;
 
+			VariablesGlobales::VerrouMotes.lock();
+
+			VariablesGlobales::vectorMotes.clear();
+
 			for (int j = 0; j < jsonArraySize; j++) {
 
 				int id = (int)data->GetObjectAt(j)->GetNamedNumber("id");
@@ -49,8 +49,10 @@ void MotesRequest::getAllMotes()
 
 				Mote temp = Mote(id, latitude, longitude, ipv6, mac);
 
-				vectorMotes.push_back(temp);
+				VariablesGlobales::vectorMotes.push_back(temp);
 			}
+
+			VariablesGlobales::VerrouMotes.unlock();
 			
 		}
 		catch (Platform::COMException^ e) {
@@ -61,14 +63,16 @@ void MotesRequest::getAllMotes()
 
 void MotesRequest::updateMote(int idMote)
 {
-	indiceMote = 0;
-	for (indiceMote; indiceMote < vectorMotes.size(); indiceMote++)
+	VariablesGlobales::VerrouMotes.lock();
+
+	VariablesGlobales::indiceMote = 0;
+	for (VariablesGlobales::indiceMote; VariablesGlobales::indiceMote < VariablesGlobales::vectorMotes.size(); VariablesGlobales::indiceMote++)
 	{
-		if (vectorMotes[indiceMote].getId() == idMote)
+		if (VariablesGlobales::vectorMotes[VariablesGlobales::indiceMote].getId() == idMote)
 			break;
 	}
 
-	Platform::String^ moteId = ConversionsMaison::conversionStringToPlatformString(vectorMotes[indiceMote].getIpv6());
+	Platform::String^ moteId = ConversionsMaison::conversionStringToPlatformString(VariablesGlobales::vectorMotes[VariablesGlobales::indiceMote].getIpv6());
 
 	//Construction de l'URL
 	Platform::String^ requestUrl = urlIOTLab + "rest/data/1/temperature-light2-light1-battery_indicator-humidity/1/" + moteId;
@@ -80,8 +84,9 @@ void MotesRequest::updateMote(int idMote)
 		.then([&](task<Platform::String^> httpContent$) -> void {
 			try {
 				Platform::String^ httpContent = httpContent$.get();
-				Mote::parseMote(httpContent, &(vectorMotes[indiceMote]));
+				Mote::parseMote(httpContent, &(VariablesGlobales::vectorMotes[VariablesGlobales::indiceMote]));
 
+				VariablesGlobales::VerrouMotes.unlock();
 			}
 			catch (Platform::COMException^ e) {
 				OutputDebugString(e->Message->Data());
