@@ -22,13 +22,17 @@ Platform::String^ stringGPS;
 Platform::String^ strLat; Platform::String^ oldStrLat;
 Platform::String^ strLng; Platform::String^ oldStrLng;
 bool GPSHaveValue, firstPrint = false;
-TextBlock^ textLat, ^ textLong;
+TextBlock^ *textLat, ^ *textLong, ^ *textTemperature, ^ *textMote, ^ *textHumidity, ^ *textLuminosity;
 MotesRequest motesRequest;
 
 
 // Permet d'afficher les coordonnées
 void MainPage::PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
 	
+	VariablesGlobales::VerrouGPS.lock();
+	textboxA->Text = VariablesGlobales::latitude.ToString();
+	textboxB->Text = VariablesGlobales::longitude.ToString();
+	VariablesGlobales::VerrouGPS.unlock();
 
 
 }
@@ -42,19 +46,13 @@ static UINT ThreadGPS() {
 	GPS().setGPS(); // active le GPS
 
 	while (true) {
+		VariablesGlobales::VerrouStatutGPS.lock();
 		GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
 	}
+	
 	return 0;
 }
 
-// Décrémentation avec Vérou
-static UINT ThreadAffichage() {
-	Sleep(1);
-	while (true) {
-		MainPage::PrintGPS(textLat, textLong);
-	}
-	return 0;
-}
 
 // Décrémentation avec Vérou
 static UINT ThreadMotes() {
@@ -75,20 +73,17 @@ MainPage::MainPage()
 {
 	InitializeComponent();
 	Cpt = rand();
-	DispatcherTimer^ timer = ref new DispatcherTimer; 
+	DispatcherTimer^ timer = ref new DispatcherTimer;
 	TimeSpan ts;
-	ts.Duration = 50000000;
+	ts.Duration = 10000000;
 	timer->Interval = ts;
 	timer->Start();
 	timer->Tick += ref new EventHandler<Object^>(this, &MainPage::OnTick);
-	textLat = ref new TextBlock();
-	textLong = ref new TextBlock();
+
+	VariablesGlobales::VerrouAffichage.lock();
 
 	thread Th_GPS(ThreadGPS);
 	Th_GPS.detach();
-
-	thread Th_Aff(ThreadAffichage);
-	Th_Aff.detach();
 
 	thread Th_Mot(ThreadMotes);
 	Th_Mot.detach();
@@ -122,12 +117,17 @@ void App1::MainPage::Button_Click_1(Platform::Object^ sender, Windows::UI::Xaml:
 
 void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)
 {
-	textLat = this->Lat;
-	textLong = this->Long;
-
-
 	VariablesGlobales::VerrouGPS.lock();
-	Lat->Text = VariablesGlobales::latitude.ToString();
-	Long->Text = VariablesGlobales::longitude.ToString();
+	this->Lat->Text = VariablesGlobales::latitude.ToString();
+	this->Long->Text = VariablesGlobales::longitude.ToString();
 	VariablesGlobales::VerrouGPS.unlock();
+
+	VariablesGlobales::VerrouMotes.lock();
+	this->Hum->Text = VariablesGlobales::vectorMotes[VariablesGlobales::indiceMote].humidity.ToString();
+	this->Mote->Text = VariablesGlobales::vectorMotes[VariablesGlobales::indiceMote].getId().ToString();
+	this->Temp->Text = VariablesGlobales::vectorMotes[VariablesGlobales::indiceMote].temperature.ToString();
+	this->Light->Text = VariablesGlobales::vectorMotes[VariablesGlobales::indiceMote].ligth.ToString();
+	VariablesGlobales::VerrouMotes.unlock();
+
+	VariablesGlobales::VerrouStatutGPS.unlock();
 }

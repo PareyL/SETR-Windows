@@ -17,6 +17,7 @@ public :
 	static shared_mutex VerrouGPS;
 	static shared_mutex VerrouStatutGPS;
 	static shared_mutex VerrouMotes; 
+	static shared_mutex VerrouAffichage; 
 
 	VariablesGlobales();
 

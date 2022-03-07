@@ -9,6 +9,7 @@ float VariablesGlobales::longitude = 0.0;
 shared_mutex VariablesGlobales::VerrouGPS;
 shared_mutex VariablesGlobales::VerrouStatutGPS;
 shared_mutex VariablesGlobales::VerrouMotes;
+shared_mutex VariablesGlobales::VerrouAffichage;
 
 VariablesGlobales::VariablesGlobales()
 {
