@@ -6,11 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="6c757d">
+    Background="#6c757d">
 
     <Grid>
         <Image HorizontalAlignment="Center" Height="35" Margin="-190,27,0,0" VerticalAlignment="Top" Width="auto" Source="Assets/Image.png"/>
-        <Image HorizontalAlignment="Left" Height="350" Margin="72,-130,0,0" VerticalAlignment="Top" Width="auto" Source="Assets/mote.scale-400.png"/>
+        <Image HorizontalAlignment="Center" Height="350" Margin="72,-130,0,0" VerticalAlignment="Top" Width="auto" Source="Assets/mote.scale-400.png"/>
         <ScrollViewer Margin="0,159,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="538" Width="411">
             <Grid>
                 <Grid Height="110" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10, 0, 10, 0">
