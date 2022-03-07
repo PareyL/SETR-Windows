@@ -11,7 +11,6 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
-                ref class TextBox;
                 ref class TextBlock;
             }
         }
@@ -39,7 +38,6 @@ namespace App1
     
         class MainPage_obj1_Bindings;
     
-        private: ::Windows::UI::Xaml::Controls::TextBox^ Affich;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ Hum;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ Light;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ Mote;
