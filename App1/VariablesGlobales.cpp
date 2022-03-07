@@ -3,15 +3,12 @@
 
 std::vector<Mote> VariablesGlobales::vectorMotes = std::vector<Mote>();
 int VariablesGlobales::indiceMote = 0;
-int VariablesGlobales::idMote = 0;
+float VariablesGlobales::latitude = 0.0;
+float VariablesGlobales::longitude = 0.0;
 
 shared_mutex VariablesGlobales::VerrouGPS;
-shared_mutex VariablesGlobales::VerrouAffichage;
+shared_mutex VariablesGlobales::VerrouStatutGPS;
 shared_mutex VariablesGlobales::VerrouMotes;
-shared_mutex VariablesGlobales::VerrouCoordonnees;
-shared_mutex VariablesGlobales::VerrouTimer;
-
-Platform::String^ VariablesGlobales::coordonneesGPS;
 
 VariablesGlobales::VariablesGlobales()
 {

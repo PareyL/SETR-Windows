@@ -14,7 +14,7 @@ class GPS
 public:
 	void GPS::getGPS();
 	void GPS::setGPS();
-	static int GPS::GetCloserMote(float lat, float lng);
+	static void GPS::GetCloserMote();
 	static double GPS::deg2rad(double deg);
 };
 

@@ -11,15 +11,12 @@ class VariablesGlobales
 public :
 	static std::vector<Mote> vectorMotes;
 	static int indiceMote;
-	static int idMote;
+	static float latitude;
+	static float longitude;
 
 	static shared_mutex VerrouGPS;
-	static shared_mutex VerrouAffichage; 
+	static shared_mutex VerrouStatutGPS;
 	static shared_mutex VerrouMotes; 
-	static shared_mutex VerrouCoordonnees;
-	static shared_mutex VerrouTimer;
-
-	static Platform::String^ coordonneesGPS;
 
 	VariablesGlobales();
 

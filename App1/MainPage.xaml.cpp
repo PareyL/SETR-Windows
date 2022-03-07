@@ -22,73 +22,26 @@ Platform::String^ stringGPS;
 Platform::String^ strLat; Platform::String^ oldStrLat;
 Platform::String^ strLng; Platform::String^ oldStrLng;
 bool GPSHaveValue, firstPrint = false;
-float fLat = 0, fLng = 0;
 TextBlock^ textLat, ^ textLong;
 MotesRequest motesRequest;
 
 
-
-// Découpage d'une Plateform::String, permet de récupérer la latitude et longitude
-Platform::String^ strPos(const wchar_t* str, int start, int end) {
-	Platform::String^ finalStr = "";
-	for (int i = start; i < end; i++)
-		finalStr += str[i].ToString();
-	return finalStr;
-}
-
 // Permet d'afficher les coordonnées
 void MainPage::PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
-	if (stringGPS->Length() > 0) {
-		if (oldStrLat != "" && oldStrLng != "") {
-			if (strLat != oldStrLat || strLng != oldStrLng) {
-				OutputDebugStringA("Change location\n");
-				const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
-				strLat = strPos(charStrGPS, 0, 7);
-				strLng = strPos(charStrGPS, 9, 17);
-				textboxA->Text = strLat;
-				textboxB->Text = strLng;
+	
 
-				VariablesGlobales::VerrouCoordonnees.lock();
-				fLat = _wtof(strLat->Data());
-				fLng = _wtof(strLng->Data());
-				VariablesGlobales::VerrouCoordonnees.unlock();
-			}
-		}
-		else {
-			OutputDebugStringA("First Print\n");
-			const wchar_t* charStrGPS = stringGPS->ToString()->Begin();
-			strLat = strPos(charStrGPS, 0, 7);
-			strLng = strPos(charStrGPS, 9, 17);
-			textboxA->Text = strLat;
-			textboxB->Text = strLng;
 
-			VariablesGlobales::VerrouCoordonnees.lock();
-			fLat = _wtof(strLat->Data());
-			fLng = _wtof(strLng->Data());
-			VariablesGlobales::VerrouCoordonnees.unlock();
-		}
-
-		oldStrLat = strLat;
-		oldStrLng = strLng;
-
-		VariablesGlobales::VerrouCoordonnees.lock();
-		if (fLat != 0 && fLng != 0)
-		{
-			OutputDebugStringA("geoloc not null\n");
-			VariablesGlobales::idMote = GPS::GetCloserMote(fLat, fLng);
-		}
-		VariablesGlobales::VerrouCoordonnees.unlock();
-	}
-	VariablesGlobales::VerrouAffichage.unlock();
 }
 
 
 // Thread de récupération des données GPS
 static UINT ThreadGPS() {
 	Sleep(1);
+
+	VariablesGlobales::VerrouStatutGPS.lock();
+	GPS().setGPS(); // active le GPS
+
 	while (true) {
-		Sleep(1);
-		VariablesGlobales::VerrouGPS.lock();
 		GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
 	}
 	return 0;
@@ -98,9 +51,6 @@ static UINT ThreadGPS() {
 static UINT ThreadAffichage() {
 	Sleep(1);
 	while (true) {
-		Sleep(1);
-		VariablesGlobales::VerrouTimer.lock();
-		VariablesGlobales::VerrouAffichage.lock();
 		MainPage::PrintGPS(textLat, textLong);
 	}
 	return 0;
@@ -114,14 +64,7 @@ static UINT ThreadMotes() {
 	motesRequest.getAllMotes();
 
 	while (true) {
-		Sleep(1);
-		VariablesGlobales::VerrouMotes.lock();
-		VariablesGlobales::vectorMotes;
-		if(VariablesGlobales::idMote == 0)
-			VariablesGlobales::VerrouMotes.unlock();
-		else
-			motesRequest.updateMote(VariablesGlobales::idMote);
-		
+		GPS::GetCloserMote();
 	}
 	return 0;
 }
@@ -131,7 +74,6 @@ static UINT ThreadMotes() {
 MainPage::MainPage()
 {
 	InitializeComponent();
-	GPS().setGPS(); // active le GPS
 	Cpt = rand();
 	DispatcherTimer^ timer = ref new DispatcherTimer; 
 	TimeSpan ts;
@@ -182,6 +124,10 @@ void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)
 {
 	textLat = this->Lat;
 	textLong = this->Long;
-	stringGPS = VariablesGlobales::coordonneesGPS;
-	VariablesGlobales::VerrouTimer.unlock();
+
+
+	VariablesGlobales::VerrouGPS.lock();
+	Lat->Text = VariablesGlobales::latitude.ToString();
+	Long->Text = VariablesGlobales::longitude.ToString();
+	VariablesGlobales::VerrouGPS.unlock();
 }

@@ -40,7 +40,6 @@ TimeSpan period;
 Platform::String^ error = "";
 char* test;
 Platform::String^ coordStr = "";
-bool statusOK = false;
 double earthRadiusKm = 6371.0;
 double M_PI = 2 * acos(0.0);
 int closer;
@@ -52,7 +51,7 @@ void GPS::setGPS() {
 	VariablesGlobales::VerrouGPS.lock();
 	create_task(geolocator->RequestAccessAsync()).then([&](task<GeolocationAccessStatus> geo$) -> void { // Vérifie les droits GPS
 		if (geo$.get() == GeolocationAccessStatus::Allowed) {
-			statusOK = true;
+			VariablesGlobales::VerrouStatutGPS.unlock();
 		}
 		else if (geo$.get() == GeolocationAccessStatus::Denied) {
 			OutputDebugStringA("Denied");
@@ -66,36 +65,43 @@ void GPS::setGPS() {
 
 // Récupère les Coordonnées GPS
 void GPS::getGPS() {
-	Geolocator^ geolocator = ref new Geolocator;
+	VariablesGlobales::VerrouStatutGPS.lock();
 
-	if(statusOK) {
-		period.Duration = 30 * 10000000;
-		Geolocator^ geolocator = ref new Geolocator;		
-		auto positionToken = create_task(geolocator->GetGeopositionAsync(period, period))
-			.then([&](task<Geoposition^> position$) -> void {
-				auto position = position$.get();
-				auto coordinate = position->Coordinate;
-				OutputDebugStringA("Position: ");
-				OutputDebugString(coordinate->Latitude.ToString()->Data());
-				OutputDebugStringA("  |  ");
-				OutputDebugString(coordinate->Longitude.ToString()->Data());
-				OutputDebugStringA("\n");
-				coordStr = coordinate->Latitude.ToString() + " / " + coordinate->Longitude.ToString();
-				if (coordStr->Length() > 0)
-					MainPage::HasGPSValue();
+	period.Duration = 30 * 10000000;
+	Geolocator^ geolocator = ref new Geolocator;		
+	auto positionToken = create_task(geolocator->GetGeopositionAsync(period, period))
+		.then([&](task<Geoposition^> position$) -> void {
+			auto position = position$.get();
+			auto coordinate = position->Coordinate;
+			OutputDebugStringA("Position: ");
+			OutputDebugString(coordinate->Latitude.ToString()->Data());
+			OutputDebugStringA("  |  ");
+			OutputDebugString(coordinate->Longitude.ToString()->Data());
+			OutputDebugStringA("\n");
+			coordStr = coordinate->Latitude.ToString() + " / " + coordinate->Longitude.ToString();
+			if (coordStr->Length() > 0)
+				MainPage::HasGPSValue();
 
-				VariablesGlobales::coordonneesGPS = coordStr;
-				VariablesGlobales::VerrouGPS.unlock();
-			});		
-		}
+			VariablesGlobales::VerrouGPS.lock();
+			VariablesGlobales::latitude = coordinate->Latitude;
+			VariablesGlobales::longitude = coordinate->Longitude;
+			VariablesGlobales::VerrouGPS.unlock();
+		});	
+
+	VariablesGlobales::VerrouStatutGPS.unlock();
 }
 
 double GPS::deg2rad(double deg) {
 	return (deg * M_PI / 180);
 }
 
-int GPS::GetCloserMote(float lat, float lng)
+void GPS::GetCloserMote()
 {
+	VariablesGlobales::VerrouGPS.lock();
+	float lat = VariablesGlobales::latitude;
+	float lng = VariablesGlobales::longitude;
+	VariablesGlobales::VerrouGPS.unlock();
+
 	VariablesGlobales::VerrouMotes.lock();
 
 	double distance = INFINITE;
@@ -117,8 +123,7 @@ int GPS::GetCloserMote(float lat, float lng)
 	}
 	int id = VariablesGlobales::vectorMotes[closer].getId();
 
-	VariablesGlobales::VerrouMotes.unlock();
-
-	return id;
+	MotesRequest motesRequest = MotesRequest();
+	motesRequest.updateMote(id);;
 }
 

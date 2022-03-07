@@ -61,6 +61,7 @@ void MotesRequest::getAllMotes()
 void MotesRequest::updateMote(int idMote)
 {
 	VariablesGlobales::indiceMote = 0;
+
 	for (VariablesGlobales::indiceMote; VariablesGlobales::indiceMote < VariablesGlobales::vectorMotes.size(); VariablesGlobales::indiceMote++)
 	{
 		if (VariablesGlobales::vectorMotes[VariablesGlobales::indiceMote].getId() == idMote)
