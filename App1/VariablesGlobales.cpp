@@ -9,6 +9,7 @@ shared_mutex VariablesGlobales::VerrouGPS;
 shared_mutex VariablesGlobales::VerrouAffichage;
 shared_mutex VariablesGlobales::VerrouMotes;
 shared_mutex VariablesGlobales::VerrouCoordonnees;
+shared_mutex VariablesGlobales::VerrouTimer;
 
 Platform::String^ VariablesGlobales::coordonneesGPS;
 

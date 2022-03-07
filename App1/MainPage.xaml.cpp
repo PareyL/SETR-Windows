@@ -87,6 +87,7 @@ void MainPage::PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
 static UINT ThreadGPS() {
 	Sleep(1);
 	while (true) {
+		Sleep(1);
 		VariablesGlobales::VerrouGPS.lock();
 		GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
 	}
@@ -97,6 +98,8 @@ static UINT ThreadGPS() {
 static UINT ThreadAffichage() {
 	Sleep(1);
 	while (true) {
+		Sleep(1);
+		VariablesGlobales::VerrouTimer.lock();
 		VariablesGlobales::VerrouAffichage.lock();
 		MainPage::PrintGPS(textLat, textLong);
 	}
@@ -111,7 +114,9 @@ static UINT ThreadMotes() {
 	motesRequest.getAllMotes();
 
 	while (true) {
+		Sleep(1);
 		VariablesGlobales::VerrouMotes.lock();
+		VariablesGlobales::vectorMotes;
 		if(VariablesGlobales::idMote == 0)
 			VariablesGlobales::VerrouMotes.unlock();
 		else
@@ -130,7 +135,7 @@ MainPage::MainPage()
 	Cpt = rand();
 	DispatcherTimer^ timer = ref new DispatcherTimer; 
 	TimeSpan ts;
-	ts.Duration = 10000000;
+	ts.Duration = 50000000;
 	timer->Interval = ts;
 	timer->Start();
 	timer->Tick += ref new EventHandler<Object^>(this, &MainPage::OnTick);
@@ -177,6 +182,6 @@ void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)
 {
 	textLat = this->Lat;
 	textLong = this->Long;
-	
 	stringGPS = VariablesGlobales::coordonneesGPS;
+	VariablesGlobales::VerrouTimer.unlock();
 }

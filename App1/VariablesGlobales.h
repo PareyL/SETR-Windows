@@ -17,6 +17,7 @@ public :
 	static shared_mutex VerrouAffichage; 
 	static shared_mutex VerrouMotes; 
 	static shared_mutex VerrouCoordonnees;
+	static shared_mutex VerrouTimer;
 
 	static Platform::String^ coordonneesGPS;
 

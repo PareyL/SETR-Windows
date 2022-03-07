@@ -48,6 +48,8 @@ int closer;
 // Permet de mettre en place le GPS et derécupérer les droits
 void GPS::setGPS() {
 	Geolocator^ geolocator = ref new Geolocator;
+
+	VariablesGlobales::VerrouGPS.lock();
 	create_task(geolocator->RequestAccessAsync()).then([&](task<GeolocationAccessStatus> geo$) -> void { // Vérifie les droits GPS
 		if (geo$.get() == GeolocationAccessStatus::Allowed) {
 			statusOK = true;
@@ -58,7 +60,8 @@ void GPS::setGPS() {
 			auto uri = ref new Uri("ms-settings:privacy-location");
 			auto success = create_task(Windows::System::Launcher::LaunchUriAsync(uri));
 		}
-		});
+		VariablesGlobales::VerrouGPS.unlock();
+	});
 }
 
 // Récupère les Coordonnées GPS
