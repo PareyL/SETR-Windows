@@ -12,9 +12,9 @@ using namespace Windows::Devices::Geolocation;
 class GPS
 {
 public:
-	Platform::String^ GPS::getGPS();
+	void GPS::getGPS();
 	void GPS::setGPS();
-	static int GPS::GetCloserMote(float lat, float lng);
+	static void GPS::GetCloserMote();
 	static double GPS::deg2rad(double deg);
 };
 

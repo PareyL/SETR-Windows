@@ -33,8 +33,6 @@ void MotesRequest::getAllMotes()
 			JsonArray^ data = objJson->GetObject()->GetNamedArray("sender")->GetArray();
 			int jsonArraySize = data->Size;
 
-			VariablesGlobales::VerrouMotes.lock();
-
 			VariablesGlobales::vectorMotes.clear();
 
 			for (int j = 0; j < jsonArraySize; j++) {
@@ -51,21 +49,19 @@ void MotesRequest::getAllMotes()
 
 				VariablesGlobales::vectorMotes.push_back(temp);
 			}
-
-			VariablesGlobales::VerrouMotes.unlock();
 			
 		}
 		catch (Platform::COMException^ e) {
 			OutputDebugString(e->Message->Data());
 		}
+		VariablesGlobales::VerrouMotes.unlock();
 	});
 }
 
 void MotesRequest::updateMote(int idMote)
 {
-	VariablesGlobales::VerrouMotes.lock();
-
 	VariablesGlobales::indiceMote = 0;
+
 	for (VariablesGlobales::indiceMote; VariablesGlobales::indiceMote < VariablesGlobales::vectorMotes.size(); VariablesGlobales::indiceMote++)
 	{
 		if (VariablesGlobales::vectorMotes[VariablesGlobales::indiceMote].getId() == idMote)
@@ -85,11 +81,10 @@ void MotesRequest::updateMote(int idMote)
 			try {
 				Platform::String^ httpContent = httpContent$.get();
 				Mote::parseMote(httpContent, &(VariablesGlobales::vectorMotes[VariablesGlobales::indiceMote]));
-
-				VariablesGlobales::VerrouMotes.unlock();
 			}
 			catch (Platform::COMException^ e) {
 				OutputDebugString(e->Message->Data());
 			}
+			VariablesGlobales::VerrouMotes.unlock();
 		});
 }
