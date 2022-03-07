@@ -75,10 +75,11 @@ void MainPage::PrintGPS(TextBlock^ textboxA, TextBlock^ textboxB) {
 		if (fLat != 0 && fLng != 0)
 		{
 			OutputDebugStringA("geoloc not null\n");
-			GPS::GetCloserMote(fLat, fLng);
+			VariablesGlobales::idMote = GPS::GetCloserMote(fLat, fLng);
 		}
 		VariablesGlobales::VerrouCoordonnees.unlock();
 	}
+	VariablesGlobales::VerrouAffichage.unlock();
 }
 
 
@@ -87,6 +88,7 @@ static UINT ThreadGPS() {
 	Sleep(1);
 	while (true) {
 		VariablesGlobales::VerrouGPS.lock();
+		GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
 	}
 	return 0;
 }
@@ -96,7 +98,7 @@ static UINT ThreadAffichage() {
 	Sleep(1);
 	while (true) {
 		VariablesGlobales::VerrouAffichage.lock();
-		Cpt--;
+		MainPage::PrintGPS(textLat, textLong);
 	}
 	return 0;
 }
@@ -104,12 +106,16 @@ static UINT ThreadAffichage() {
 // Décrémentation avec Vérou
 static UINT ThreadMotes() {
 	Sleep(1);
+
+	VariablesGlobales::VerrouMotes.lock();
 	motesRequest.getAllMotes();
 
 	while (true) {
 		VariablesGlobales::VerrouMotes.lock();
-		Cpt--;
-
+		if(VariablesGlobales::idMote == 0)
+			VariablesGlobales::VerrouMotes.unlock();
+		else
+			motesRequest.updateMote(VariablesGlobales::idMote);
 		
 	}
 	return 0;
@@ -171,8 +177,6 @@ void App1::MainPage::OnTick(Platform::Object^ sender, Platform::Object^ e)
 {
 	textLat = this->Lat;
 	textLong = this->Long;
-	stringGPS = GPS().getGPS(); // On récupère les coordonnées une fois qu'on a des données
-	MainPage::PrintGPS(Lat, Long);
-	Affich->Text = Cpt.ToString();
-	VariablesGlobales::VerrouGPS.unlock();
+	
+	stringGPS = VariablesGlobales::coordonneesGPS;
 }

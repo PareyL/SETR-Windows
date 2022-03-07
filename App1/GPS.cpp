@@ -62,7 +62,7 @@ void GPS::setGPS() {
 }
 
 // Récupère les Coordonnées GPS
-Platform::String^ GPS::getGPS() {
+void GPS::getGPS() {
 	Geolocator^ geolocator = ref new Geolocator;
 
 	if(statusOK) {
@@ -70,19 +70,21 @@ Platform::String^ GPS::getGPS() {
 		Geolocator^ geolocator = ref new Geolocator;		
 		auto positionToken = create_task(geolocator->GetGeopositionAsync(period, period))
 			.then([&](task<Geoposition^> position$) -> void {
-			auto position = position$.get();
-			auto coordinate = position->Coordinate;
-			OutputDebugStringA("Position: ");
-			OutputDebugString(coordinate->Latitude.ToString()->Data());
-			OutputDebugStringA("  |  ");
-			OutputDebugString(coordinate->Longitude.ToString()->Data());
-			OutputDebugStringA("\n");
-			coordStr = coordinate->Latitude.ToString() + " / " + coordinate->Longitude.ToString();
-			if (coordStr->Length() > 0)
-				MainPage::HasGPSValue();
+				auto position = position$.get();
+				auto coordinate = position->Coordinate;
+				OutputDebugStringA("Position: ");
+				OutputDebugString(coordinate->Latitude.ToString()->Data());
+				OutputDebugStringA("  |  ");
+				OutputDebugString(coordinate->Longitude.ToString()->Data());
+				OutputDebugStringA("\n");
+				coordStr = coordinate->Latitude.ToString() + " / " + coordinate->Longitude.ToString();
+				if (coordStr->Length() > 0)
+					MainPage::HasGPSValue();
+
+				VariablesGlobales::coordonneesGPS = coordStr;
+				VariablesGlobales::VerrouGPS.unlock();
 			});		
 		}
-	return coordStr;
 }
 
 double GPS::deg2rad(double deg) {
